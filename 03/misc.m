@@ -19,10 +19,10 @@ xd = Ad \ bd
 % Das liegt an der hohen anzahl der Nachkomma stellen. Bei der Division durch Gaus
 % entstehen hohe einzel Ergebnisse
 
-kappa  =  cond(A, "fro")
+kappa  = cond(A, "fro")
 rkappa = rcond(A)
 
 asing  = rkappa + 1.0
-%Ergibt 1.0000: 
+% Ergibt 1.0000: 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

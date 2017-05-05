@@ -1,12 +1,12 @@
-function aFault = absoluteFault (A, b, delta)
-  % Gestörten Matrix berechnen & Vektor
+function rtrn = absoluteFault (A, b, delta)
+  % Gestörte Matrix & Vektor berechnen
   Adelta = A * delta;
   bdelta = b * delta;
 
   % Kappa => Entscheidung bzgl. Vereinfachter Ungleichung bzw. normaler Ungleichung
   k = norm(Adelta, "fro") * norm(inv(A), "fro");
 
-  % Gestörten Ergeniss-Vektor berechnen
+  % Gestörten Ergebniss-Vektor berechnen
   xdelta = Adelta \ bdelta;
 
   % Relativen Fehler über normale Ungleichung berechnen, da ich Sie sowieso nur einmal eintippen muss
@@ -23,5 +23,5 @@ function aFault = absoluteFault (A, b, delta)
 
   % Absolulten Fehler errechnen indem man den relativen Fehler mit dem gestörten
   % Ergeniss-Vektor multipliziert
-  aFault = rFault * xdelta;
+  rtrn = rFault * xdelta;
 endfunction
