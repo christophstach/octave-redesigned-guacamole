@@ -38,14 +38,14 @@ res1 = A1 \ b1; % Ergebnis
 absoluteFault1 = absoluteFault(A1, b1, delta)
 interval1 = [(res1 - absoluteFault1) (res1 + absoluteFault1)] % Ergebnisinterval mit möglichen Fehlern
 
-res1 = A2 \ b2; % Ergebnis
+res2 = A2 \ b2; % Ergebnis
 absoluteFault2 = absoluteFault(A2, b2, delta)
-interval2 = [(res2 - absoluteFault1) (res2 + absoluteFault2)] % Ergebnisinterval mit möglichen Fehlern
+interval2 = [(res2 - absoluteFault2) (res2 + absoluteFault2)] % Ergebnisinterval mit möglichen Fehlern
 
-res1 = A3 \ b3; % Ergebnis
+res3 = A3 \ b3; % Ergebnis
 absoluteFault3 = absoluteFault(A3, b3, delta)
-interval3 = [(res3 - absoluteFault1) (res3 + absoluteFault3)] % Ergebnisinterval mit möglichen Fehlern
+interval3 = [(res3 - absoluteFault3) (res3 + absoluteFault3)] % Ergebnisinterval mit möglichen Fehlern
 
-res1 = A4 \ b4; % Ergebnis
+res4 = A4 \ b4; % Ergebnis
 absoluteFault4 = absoluteFault(A4, b4, delta)
-interval4 = [(res1 - absoluteFault4) (res4 + absoluteFault4)] % Ergebnisinterval mit möglichen Fehlern
+interval4 = [(res4 - absoluteFault4) (res4 + absoluteFault4)] % Ergebnisinterval mit möglichen Fehlern
