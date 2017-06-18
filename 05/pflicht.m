@@ -30,7 +30,7 @@ endfunction
 xA = -10:0.1:10;
 xB = 0:0.1:50;
 xC = -1:0.1:1;
-xD = 14:0.1:15;
+xD = -10:0.1:10;
 
 
 % Zuerst per Plotten einen gescheiten eingabe Interval bestimmen.
