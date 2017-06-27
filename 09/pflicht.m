@@ -62,31 +62,61 @@ cube = [ 1:6 ]
 [A] = ndgrid(cube);
 posibilities = [ A(:) ]';
 counts = PosibilitiesToCounts(posibilities, 6);
-figure(2),bar(1:6, counts),grid
+p = counts ./ ( 6 );
+X = [1:6];
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(2),bar(Zn, p),grid
 
 % Für 2 Würfel
 [A, B] = ndgrid(cube, cube);
 posibilities = [ A(:) B(:) ]';
 counts = PosibilitiesToCounts(posibilities, 12);
-figure(3),bar(1:12, counts),grid
+p = counts ./ ( 6 ^ 2 );
+X = [1:12];
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(3),bar(Zn, p),grid
 
 % Für 3 Würfel
 [A, B, C] = ndgrid(cube, cube, cube);
 posibilities = [ A(:) B(:) C(:) ]';
 counts = PosibilitiesToCounts(posibilities, 18);
-figure(4),bar(1:18, counts),grid
+p = counts ./ ( 6 ^ 3 );
+X = [1:18];
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(4),bar(Zn, p),grid
 
 % Für 4 Würfel
 [A, B, C, D] = ndgrid(cube, cube, cube, cube);
 posibilities = [ A(:) B(:) C(:) D(:) ]';
 counts = PosibilitiesToCounts(posibilities, 24);
-figure(5),bar(1:24, counts),grid
+p = counts ./ ( 6 ^ 4 );
+X = [1:24];
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(5),bar(Zn, p),grid
 
 % Für 5 Würfel
 [A, B, C, D, E] = ndgrid(cube, cube, cube, cube, cube);
 posibilities = [ A(:) B(:) C(:) D(:) E(:) ]';
 counts = PosibilitiesToCounts(posibilities, 30);
-figure(6),bar(1:30, counts),grid
+p = counts ./ ( 6 ^ 5 );
+X = [1:30];
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(6),bar(Zn, p),grid
 
 % Für 6 Würfel
 [A, B, C, D, E, F] = ndgrid(cube, cube, cube, cube, cube, cube);
@@ -94,12 +124,11 @@ posibilities = [ A(:) B(:) C(:) D(:) E(:) F(:) ]';
 counts = PosibilitiesToCounts(posibilities, 36);
 p = counts ./ ( 6 ^ 6 );
 X = [1:36];
-pz = X .* p;
-EX = mySum(pz) % Erwartungswert
-%%%% Hier müssen wir echt mal schauen wie es weitergeht ... das echt psycho!
-vari = mySum(p .* (X - EX)) ^ 2
-display(sqrt(vari)); 
-figure(7),bar(X, counts),grid
+EX = mySum(X .* p) % Erwartungswert
+varianz = mySum(((X .- EX)  .^ 2) .* p) % Varianz
+sigma = sqrt(varianz) % Standardabweichung
+Zn = (X .- EX) ./ sigma;
+figure(7),bar(Zn, p),grid
 
 
 disp("---------------------------------------------")
