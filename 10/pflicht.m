@@ -60,22 +60,27 @@ sigma = sqrt(sigmaQuadrat) % Standardabweichung
 
 disp("Erwartungswert Rechnungsbetrag: "),disp(mue * 80 + 30)
 disp("Standardabweichung Rechnungsbetrag: "),disp(sigma * 80)
+disp("####################################################")
 disp("")
 
 % Aufgabe 2
 % Possion
-function y = X(x)
-  y = (7 ./ x); % Einsätze pro Woche
+disp("Aufgabe 2")
+function y = einsaetzeProWoche(x) % Einsätze pro Woche
+  y = (7 ./ x); 
 endfunction
 
 x = [ 1:8 ];
-y = X(x)
+y = einsaetzeProWoche(x)
  
 y2 = poisspdf(x, y)
-
+y3 = poisscdf(x, y)
 figure(1),bar(x, y2)
 
+disp("Mindestens 2x pro Woche: "),disp(1 - y3(2))
 
+disp("####################################################")
+disp("")
 
 % Aufgabe 3
 x = [ 10 8 9 10 11 11 9 12 8 12 ]; % Stichproben
@@ -109,6 +114,8 @@ interval = [
   )
 ]
 
+disp("####################################################")
+disp("")
 
 % Aufgabe 4
 % Gausverteilung
