@@ -71,7 +71,7 @@ x = [ 0:1:8 ];
 meanEinsaetze = 3.5; 
  
 y = poisspdf(x, meanEinsaetze)
-%figure(1),bar(x, y)
+figure(2),bar(x, y)
 
 %Mehr als 2 Einsätze pro Woche
 p = 1-poisscdf(2, meanEinsaetze); 
@@ -85,16 +85,16 @@ disp("Mindestens 2x pro Woche: "),disp(p)
 %Für die Zeit zwischen den Einsätzen 
 
 meanZeitZwEinsaetzen = 2; 
-figure(2),bar(0:10, poisspdf(0:10, 2)); 
-figure(3),bar(0:10, poisscdf(0:10, 2)); 
+figure(3),bar(0:10, poisspdf(0:10, meanZeitZwEinsaetzen)); 
+figure(4),bar(0:10, poisscdf(0:10, meanZeitZwEinsaetzen)); 
 
 %D --> Wahrscheinlichtkeit das die Feuerwehr innerhalb von zwei Tagen nach letzten Einsatz 
 %Wieder ausrücken muss
-p = poisscdf(2, meanZeitZwEinsaetzen); 
+p = expcdf(2, meanZeitZwEinsaetzen); 
 disp("D:"),p
 
 %E --> Wahrscheinlichtkeit das min. 5 Tage nach letztem Einsatz kein neuer Einsatz stattfindet
-p = 1 - poisscdf(4, meanZeitZwEinsaetzen);
+p = 1 - expcdf(4, meanZeitZwEinsaetzen);
 disp("E:"),p
 
 
