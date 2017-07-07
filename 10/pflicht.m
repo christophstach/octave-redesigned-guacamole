@@ -77,7 +77,7 @@ figure(2),bar(x, y)
 p = 1-poisscdf(2, meanEinsaetze); 
 
 
-disp("Mindestens 2x pro Woche: "),disp(p)
+disp("Mehr als 2x pro Woche: "),disp(p)
 
 
 %C --> Mittelwert 2 Tage zwischen jedem Einsatz 
@@ -85,16 +85,16 @@ disp("Mindestens 2x pro Woche: "),disp(p)
 %Für die Zeit zwischen den Einsätzen 
 
 meanZeitZwEinsaetzen = 2; 
-figure(3),bar(0:10, poisspdf(0:10, meanZeitZwEinsaetzen)); 
-figure(4),bar(0:10, poisscdf(0:10, meanZeitZwEinsaetzen)); 
+figure(3),bar((0:8), poisspdf((0:8), meanZeitZwEinsaetzen)); 
+figure(4),bar((0:8), poisscdf((0:8), meanZeitZwEinsaetzen )); 
 
 %D --> Wahrscheinlichtkeit das die Feuerwehr innerhalb von zwei Tagen nach letzten Einsatz 
 %Wieder ausrücken muss
-p = expcdf(2, meanZeitZwEinsaetzen); 
+p = poisscdf(2, meanZeitZwEinsaetzen); 
 disp("D:"),p
 
 %E --> Wahrscheinlichtkeit das min. 5 Tage nach letztem Einsatz kein neuer Einsatz stattfindet
-p = 1 - expcdf(4, meanZeitZwEinsaetzen);
+p = 1 - poisscdf(4, meanZeitZwEinsaetzen);
 disp("E:"),p
 
 
@@ -103,13 +103,13 @@ disp("####################################################")
 disp("")
 
 % Aufgabe 3
+disp("Aufgabe 3")
 x = [ 10 8 9 10 11 11 9 12 8 12 ]; % Stichproben
 xQuer = mean(x); % Mittelwert der Stichproben
 sigmaQuadrat = 4; % Varianz
 sigma = sqrt(sigmaQuadrat); % Standardabweichung
 n = columns(x); % Anzahl Stichproben
 gamma = 0.95;
-disp("Aufgabe 3:")
 
 c = norminv(
   (gamma + 1)
@@ -138,6 +138,7 @@ disp("####################################################")
 disp("")
 
 % Aufgabe 4
+disp("Aufgabe 4")
 % Gausverteilung
 mue = 10000; 
 sigma = 800 % Standardabweichung
@@ -179,6 +180,7 @@ disp("####################################################")
 
 
 % Aufgabe 5
+disp("Aufgabe 5")
 % Gausverteilung
 
 mue = 40000; 
