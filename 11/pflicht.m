@@ -162,7 +162,7 @@ x = -1:0.1:0;
 area = trapz(x, fd(x))
 disp("Simpson-Regel: ")
 area = quad('fd', -1,0)
-%%Monte Carlos läuft nicht, weil y Werte kleiner 0 sind
+%%Monte Carlo läuft nicht, weil y Werte kleiner 0 sind
 %disp("Monte-Carlo: ")
 %area = mcintgr("fd", -1, 0, 10000)
 
